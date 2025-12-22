@@ -150,7 +150,7 @@ munmap(0x7fcd60f63000, 4096)            = 0
 
 Системные вызовы: `read`, `close`, nmap`, `close`, `munmap`
 
-# 3. Найти системные вызовы в исходниках ядра 6.8.0-79-generic
+# 3. Найти системные вызовы в исходниках ядра 6.12.58
 
 
 
@@ -269,5 +269,6 @@ SYSCALL\_DEFINE2(munmap) \[mm/mmap.c:648]
                  remove\_vma(mm, vma)
 
              exit\_mmap(mm) 
+
 
 ```
