@@ -198,7 +198,7 @@ SYSCALL\_DEFINE1(close) \[fs/close.c:22]
 
      \_\_close\_fd(current->files, fd) \[fs/file.c:2150]
 
-         files\_lock() ← блокировка таблицы файлов
+         files\_lock()
 
          fcheck\_files(files, fd) → struct file \*file
 
@@ -226,7 +226,7 @@ SYSCALL\_DEFINE6(mmap\_pgoff) \[mm/mmap.c:614]
 
          vm\_mmap\_pgoff(file, addr, len, prot, flags, pgoff) \[mm/util.c:133]
 
-             mmap\_lock(mm) ← блокировка адресного пространства
+             mmap\_lock(mm)
 
              do\_mmap(file, addr, len, prot, flags, pgoff, 0) \[mm/mmap.c:173]
 
@@ -256,7 +256,7 @@ SYSCALL\_DEFINE2(munmap) \[mm/mmap.c:648]
 
      vm\_munmap(addr, len) \[mm/util.c:179]
 
-         mmap\_lock\_killable(mm) ← блокировка
+         mmap\_lock\_killable(mm)
 
          do\_munmap(mm, addr, len, 0) \[mm/mmap.c:746]
 
@@ -272,4 +272,5 @@ SYSCALL\_DEFINE2(munmap) \[mm/mmap.c:648]
 
 
 ```
+
 
