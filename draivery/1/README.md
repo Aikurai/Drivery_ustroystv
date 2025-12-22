@@ -154,7 +154,7 @@ munmap(0x7fcd60f63000, 4096)            = 0
 
 
 
-Найдём системные вызовы `read`, `close`, nmap`, `close`, `munmap` в исходниках ядра.
+Найдём системные вызовы `read`, `close`, `nmap`, `close`, `munmap` в исходниках ядра.
 
 
 
@@ -178,7 +178,7 @@ SYSCALL\_DEFINE3(read) \[fs/read\_write.c:595]
 
                  zero\_read(file, buf, count, pos) \[fs/char\_dev.c:47]
 
-                     memset\_user(buf, 0, count) ← заполняет нулями
+                     memset\_user(buf, 0, count)
 
                      return count
 
@@ -272,3 +272,4 @@ SYSCALL\_DEFINE2(munmap) \[mm/mmap.c:648]
 
 
 ```
+
